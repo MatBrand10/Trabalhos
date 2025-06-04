@@ -1,63 +1,104 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+body.dark {
+  background: #181b24 !important;
+  color: #f8fafc !important;
+}
+body.dark .navbar,
+body.dark .bg-white,
+body.dark .offcanvas,
+body.dark .bottom-menu-custom {
+  background: #232b3d !important;
+  color: #fff !important;
+}
+body.dark .navbar-brand,
+body.dark .nav-link,
+body.dark .btn-link {
+  color: #fff !important;
+}
+.bottom-menu-custom {
+  min-height: 62px;
+  box-shadow: 0 -2px 18px 0 rgb(0 0 0 / 0.10);
+}
+.bottom-action {
+  color: #0369a1;
+  font-size: 1.7em;
+  border-radius: 50%;
+  transition: background 0.15s, color 0.15s;
+}
+.bottom-action.active, .bottom-action:active {
+  background: #e0f2fe;
+  color: #0ea5e9;
+}
+body.dark .bottom-action {
+  color: #38bdf8;
+  background: transparent;
+}
+body.dark .bottom-action.active {
+  background: #1e40af33;
+  color: #0EA5E9;
+}
+.offcanvas-header {
+  border-bottom: 1px solid #e5e5e5;
+}
+body.dark .offcanvas-header {
+  border-color: #333;
 }
 
-.container {
-    max-width: 800px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+.swipe-card {
+  position: absolute;
+  left: 0; right: 0;
+  margin: 0 auto;
+  width: 100%; max-width: 360px;
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 6px 32px 0 rgb(0 0 0 / 0.16);
+  transition: transform 0.33s cubic-bezier(.5,1.7,.6,.95), box-shadow 0.25s;
+  touch-action: pan-y;
 }
+body.dark .swipe-card { background: #1e293b; }
+.swipe-card img.photo {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  background: #e5e5e5;
+}
+.swipe-card-info {
+  padding: 18px 16px 10px 16px;
+}
+.swipe-card-name { font-size: 22px; font-weight: bold; color: #0369a1; margin: 0; }
+body.dark .swipe-card-name { color: #38bdf8; }
+.swipe-card-course { font-size: 16px; color: #6b7280; margin-top: 2px; }
+body.dark .swipe-card-course { color: #9ca3af; }
+.swipe-card-bio { font-size: 14px; margin: 8px 0; }
+.swipe-card-interests { display: flex; flex-wrap: wrap; margin-top: 7px; }
+.swipe-card-interest-tag {
+  background: #E0F2FE; border-radius: 16px; padding: 3px 10px; margin-right: 7px; margin-bottom: 8px; font-size: 12px; color: #0369a1;
+  white-space: nowrap;
+}
+body.dark .swipe-card-interest-tag { background: #1e40af33; color: #38bdf8; }
+.swipe-card:not(.top) { filter: blur(0.5px) brightness(0.97);}
+.swipe-card.top { z-index: 2; box-shadow: 0 10px 34px 0 rgb(0 0 0 / 0.17);}
+.swipe-card.next { z-index: 1; }
+.swipe-card:last-child { z-index: 0; }
 
-header {
-    text-align: center;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #ddd;
+.no-more-profiles-container {
+  background: #fff; padding: 28px 16px 15px 16px; text-align: center; border-radius: 16px; margin: 0 auto 24px auto;
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 0.07); max-width: 350px;
 }
+body.dark .no-more-profiles-container { background: #222; }
+.no-more-profiles-container img { width: 110px; height: 110px; margin-bottom: 20px; }
+.no-more-profiles-container .title { font-size: 22px; font-weight: bold; color: #0369a1; margin-bottom: 8px; }
+body.dark .no-more-profiles-container .title { color: #38bdf8; }
+.no-more-profiles-container .subtitle { font-size: 15px; color: #6b7280; max-width: 300px; margin: 0 auto; }
+body.dark .no-more-profiles-container .subtitle { color: #9ca3af; }
 
-h1 {
-    margin: 0;
-    font-size: 26px;
-    color: #333;
+.btn-circle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
 }
-
-p {
-    color: #555;
-    font-size: 16px;
-}
-
-.contact p {
-    margin: 5px 0;
-}
-
-.contact a {
-    color: #007BFF;
-    text-decoration: none;
-}
-
-.section {
-    margin-top: 20px;
-}
-
-h2 {
-    font-size: 20px;
-    color: #007BFF;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 5px;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    padding: 8px 0;
-    font-size: 16px;
-    color: #333;
-}
+.btn-circle i { pointer-events: none; }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UniMatch Moderno</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-body-tertiary">
+
+  <nav class="navbar navbar-light bg-primary sticky-top shadow-sm py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#sideMenu" aria-controls="sideMenu">
+        <i class="fa fa-bars fa-2x"></i>
+      </button>
+      <span class="navbar-brand mx-auto text-white fw-bold fs-3">UniMatch</span>
+      <button id="toggle-theme" class="btn btn-link text-white p-0 fs-4" title="Alternar tema">
+        <i class="fa fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sideMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+    </div>
+    <div class="offcanvas-body px-4">
+      <ul class="nav flex-column gap-3">
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="#"><i class="fa fa-user-circle me-2"></i>Meu Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="#"><i class="fa fa-cog me-2"></i>Configurações</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5 text-danger" href="#"><i class="fa fa-sign-out-alt me-2"></i>Sair</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <main class="container d-flex flex-column align-items-center py-4" style="max-width: 400px;">
+    <section id="login-section" class="w-100">
+      <form id="login-form" class="card p-4 shadow-sm">
+        <h2 class="mb-3 text-primary text-center">Login UniMatch</h2>
+        <div class="mb-3">
+          <input type="text" id="username" class="form-control" placeholder="Usuário" required />
+        </div>
+        <div class="mb-3">
+          <input type="password" id="password" class="form-control" placeholder="Senha" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+      </form>
+    </section>
+
+    <section id="profile-section" class="w-100 d-none">
+      <div id="profile-stack-container" class="position-relative mb-4" style="height: 440px;"></div>
+      <div class="d-flex justify-content-center gap-4 mt-3">
+        <button id="pass-btn" class="btn btn-lg btn-circle btn-danger shadow-sm" title="Passar"><i class="fa fa-times fa-2x"></i></button>
+        <button id="like-btn" class="btn btn-lg btn-circle btn-success shadow-sm" title="Curtir"><i class="fa fa-heart fa-2x"></i></button>
+      </div>
+    </section>
+
+    <section id="no-more-profiles" class="w-100 d-none"></section>
+  </main>
+
+  <nav class="navbar navbar-light bg-white border-top fixed-bottom d-flex d-lg-none py-1 bottom-menu-custom">
+    <div class="container-fluid justify-content-evenly px-0">
+      <button class="btn btn-link bottom-action active" id="bottom-home"><i class="fa fa-home fa-2x"></i></button>
+      <button class="btn btn-link bottom-action" id="bottom-search"><i class="fa fa-search fa-2x"></i></button>
+      <button class="btn btn-link bottom-action" id="bottom-matches"><i class="fa fa-heart fa-2x"></i></button>
+      <button class="btn btn-link bottom-action" id="bottom-profile"><i class="fa fa-user fa-2x"></i></button>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
